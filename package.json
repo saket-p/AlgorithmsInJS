@@ -1,0 +1,21 @@
+{
+  "name": "AlgorithmsInJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "utils.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saketdaiict/AlgorithmsInJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saketdaiict/AlgorithmsInJS/issues"
+  },
+  "homepage": "https://github.com/saketdaiict/AlgorithmsInJS#readme",
+  "type": "module"
+}
