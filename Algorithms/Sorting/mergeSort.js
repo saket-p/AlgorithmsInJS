@@ -1,5 +1,4 @@
 import { mergeSortedArray } from './mergeSortedArray.js';
-import { getRandomNumArray, } from '../../Utils/utils.js';
 
 function mergeSortNow(arr, l, r) {
     if(l == r) {
