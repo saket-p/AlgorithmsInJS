@@ -1,6 +1,8 @@
 import { getRandomNumArray, timed } from '../../Utils/utils.js';
 import { selectionSort } from './selectionSort.js';
 import { bubbleSort } from './bubbleSort.js';
+import { mergeSort } from './mergeSort.js';
+
 const arrLen = 20;
 
 export default class Sort {
@@ -15,6 +17,10 @@ export default class Sort {
     bubble() {
         timed(bubbleSort)(this.arr);
     }
+
+    mergeSort() {
+        timed(mergeSort)(this.arr);
+    }
 }
 export function runSortTests(arr = []) {
     console.log('Running sort tests\n');
@@ -24,4 +30,5 @@ export function runSortTests(arr = []) {
 
     s.selection();
     s.bubble();
+    s.mergeSort();
 }
