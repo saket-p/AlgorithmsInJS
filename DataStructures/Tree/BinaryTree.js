@@ -134,11 +134,37 @@ export default class BinaryTree {
             console.log(row.join('') + "\n");
         });
     }
+
+    getNodesOnLevel(lvl, r = null) {
+        let root = r || this.root;
+        if(!root) {
+            return [];
+        }
+    
+        function collectNodesOnALevel(node, bag, currLvl, givenLvl) {
+            if(!node) {
+                return;
+            }
+
+            if(givenLvl == currLvl) {
+                bag.push(node.value);
+                return;
+            }
+
+            collectNodesOnALevel(node.left, bag, currLvl + 1, givenLvl);
+            collectNodesOnALevel(node.right, bag, currLvl + 1, givenLvl);
+        }
+
+        const bag = [];
+        collectNodesOnALevel(root, bag, 1, lvl);
+        return bag;
+    }
 }
 
 const bTree = new BinaryTree();
-bTree.fromLevelOrderArrayRecursive([1,2,3,'.','.',4,5,'.','.','.','.',6,'.','.','.']);
-//bTree.fromLevelOrderArrayRecursive([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
-/* console.log(bTree.levelOrderTraversal().toString());
-console.log(bTree.getHeight()); */
+// bTree.fromLevelOrderArrayRecursive([1,2,3,'.','.',4,5,'.','.','.','.',6,'.','.','.']);
+bTree.fromLevelOrderArrayRecursive([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+// /* console.log(bTree.levelOrderTraversal().toString());
+// console.log(bTree.getHeight()); */
 bTree.print2D();
+console.log(bTree.getNodesOnLevel(0));
