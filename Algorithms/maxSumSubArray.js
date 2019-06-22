@@ -1,4 +1,9 @@
-const maxSubArray = function(nums) {
+/**
+ * 
+ * Kadane's algorithm
+ */
+
+const maxSumSubArray = function(nums) {
     let currSum = nums[0];
     let maxSum = nums[0];
 
@@ -10,4 +15,4 @@ const maxSubArray = function(nums) {
     return maxSum;
 }
 
-console.log(maxSubArray([-2,-4,1,-3,4,-1,2,1,-5,4]));
+console.log(maxSumSubArray([-2,-4,1,-3,4,-1,2,1,-5,4]));
